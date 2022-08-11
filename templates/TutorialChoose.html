@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'sidebar.css' %}" >
+    <link rel="stylesheet" href="{% static 'TutorialChoose.css' %}" >
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    
+   </head>
+<body>
+  <div class="sidebar">
+    <div class="logo-details">
+     
+        <i class='bx bx-menu' id="btn" ></i>
+    </div>
+    <ul class="nav-list">
+     
+     
+      <li>
+       <a href="/">
+        
+         <i class=' bx bxs-home'></i>
+         <span class="links_name">Dashboard</span>
+       </a>
+       <span class="tooltip">Dashboard</span>
+     </li>
+     <li>
+       <a href="/Courses">
+         <i class=' bx bx-layer' ></i>
+         <span class="links_name">Courses</span>
+       </a>
+       <span class="tooltip">Courses</span>
+     </li>
+     <li>
+      
+     <li>
+       <a href="/MotionDetection">
+         <i class='bx bx-edit-alt' ></i>
+         <span class="links_name">Accuracy Test</span>
+       </a>
+       <span class="tooltip">Accuracy Test</span>
+     </li>
+         <li>
+       <a href="/ChooseArticle">
+         <i class='bx bx-book-open' ></i>
+         <span class="links_name">Read & Learn</span>
+       </a>
+       <span class="tooltip">Read & Learn</span>
+     </li>
+
+     
+    
+    </ul>
+  </div>
+  <section class="home-section">
+  
+   
+    </div>
+  <div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-12">
+            <div class="card text-center justify-content-center shaodw-lg  card-1 border-0 bg-white px-sm-2">
+                <div class="card-body show  ">
+                    <div class="row">
+                        <div class="col">
+                            <h5><b>LET'S START LEARNING</b></h5>
+                            <p> What's your mode of learning today?</p>
+                        </div>
+                    </div>
+
+                          
+                        <div class="col-auto ml-sm-2 mx-1 card-block  py-0 text-center radio ">
+                            <div class="flex-row">
+                                <div class="col">
+                                  <a href="/Article"> <div class="pic"> <img class="irc_mut img-fluid" src="{% static 'images/books.png'%}" width="100" height="100"> </div></a>
+                                    <p>Learn by reading</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-auto ml-sm-2 mx-1 card-block  py-0 text-center radio  ">
+                            <div class="flex-row">
+                                <div class="col">
+                                  <a href="/Courses"> <div class="pic"> <img class="irc_mut img-fluid" src="{% static 'images/video.png'%}"  width="100" height="100"> </div></a>
+                                    <p>Learn by Videos</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                   
+                </div>
+            </div>
+        </div>
+    </div>
+</div>            
+                   
+                       
+  
+  </section>
+
+  <script src="{% static 'sidebar.js' %}"> </script>
+  <script src="{% static 'tute.js' %}"> </script>
+
+</body>
+</html>

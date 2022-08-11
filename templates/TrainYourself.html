@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'sidebar.css' %}" >
+    <link rel="stylesheet" href="{% static 'TrainYourself.css' %}" >
+ 
+
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="{% static 'MotionDetection.css' %}" >
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+<body>
+  
+  <div class="sidebar">
+    <div class="logo-details">
+     
+        <i class='bx bx-menu' id="btn" ></i>
+    </div>
+    <ul class="nav-list">
+     
+     
+      <li>
+       <a href="/">
+        
+         <i class=' bx bxs-home'></i>
+         <span class="links_name">Dashboard</span>
+       </a>
+       <span class="tooltip">Dashboard</span>
+     </li>
+     <li>
+       <a href="/Courses">
+         <i class=' bx bx-layer' ></i>
+         <span class="links_name">Courses</span>
+       </a>
+       <span class="tooltip">Courses</span>
+     </li>
+     <li>
+      
+     <li>
+       <a href="/MotionDetection">
+         <i class='bx bx-edit-alt' ></i>
+         <span class="links_name">Accuracy Test</span>
+       </a>
+       <span class="tooltip">Accuracy Test</span>
+     </li>
+         <li>
+       <a href="/ChooseArticle">
+         <i class='bx bx-book-open' ></i>
+         <span class="links_name">Read & Learn</span>
+       </a>
+       <span class="tooltip">Read & Learn</span>
+     </li>
+
+     
+    
+    </ul>
+  </div>
+  <section class="home-section">
+   
+   <div class="container">
+
+   
+   
+      <div class="video-list-container">
+   
+         <div class="list active">
+            <img src="{% static 'images/Alphabets.jpg' %}" class="list-video"></img>
+            <h3 class="list-title">Learn Alphabets</h3>
+         </div>
+   
+         <div class="list">
+            <img src="{% static 'images/Numbers.jpg' %}" class="list-video"></img>
+            <h3 class="list-title">Learn Numbers</h3>
+         </div>
+   
+         <div class="list">
+            <img src="{% static 'images/Actions.jpg' %}" class="list-video"></img>
+            <h3 class="list-title">Learn Actions</h3>
+         </div>
+   
+        
+      </div>
+      <div class="main-video-container">
+         <img src="{% static 'images/Alphabets.jpg' %}" loop controls class="main-video"></img>
+         
+      </div>
+
+      {% comment %} <div class="main-video-container">
+         <video autoplay="true" id="videoElement"  loop controls class="main-video"></video>
+         <h3 class="main-vid-title">Test Your Knowledge</h3>
+      </div>  {% endcomment %}
+
+      <button id='start_button' type="button" class="btn btn-success" onclick="init()">Enable Webcam</button>
+   
+  
+  
+      <div class="float-container">
+     
+     <div id="webcam-container" class="float-child"></div>
+     <div id="label-container" class="float-child"></div>
+ 
+     </div>
+     
+
+   </div>
+  
+  </section>
+
+  <script src="{% static 'sidebar.js' %}"> </script>
+  <script src="{% static 'tute.js' %}"> </script>
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.3.1/dist/tf.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@0.8/dist/teachablemachine-image.min.js"></script>
+  <script>
+   {% comment %} var video = document.querySelector("#videoElement");
+
+   if (navigator.mediaDevices.getUserMedia) {
+     navigator.mediaDevices.getUserMedia({ video: true })
+       .then(function (stream) {
+         video.srcObject = stream;
+       })
+       .catch(function (err0r) {
+         console.log("Something went wrong!");
+       });
+   } {% endcomment %}
+
+   const URL = "https://teachablemachine.withgoogle.com/models/BsIUFH4ZG/";
+
+
+let model, webcam, labelContainer, maxPredictions;
+
+    // Load the image model and setup the webcam
+    async function init() {
+        const modelURL = URL + "model.json";
+        const metadataURL = URL + "metadata.json";
+
+        // load the model and metadata
+        // Refer to tmImage.loadFromFiles() in the API to support files from a file picker
+        // or files from your local hard drive
+        // Note: the pose library adds "tmImage" object to your window (window.tmImage)
+        model = await tmImage.load(modelURL, metadataURL);
+        maxPredictions = model.getTotalClasses();
+
+        // Convenience function to setup a webcam
+        const flip = true; // whether to flip the webcam
+        webcam = new tmImage.Webcam(800, 600, flip); // width, height, flip
+        await webcam.setup(); // request access to the webcam
+        await webcam.play();
+        window.requestAnimationFrame(loop);
+
+        // append elements to the DOM
+        document.getElementById("webcam-container").appendChild(webcam.canvas);
+        labelContainer = document.getElementById("label-container");
+        for (let i = 0; i < maxPredictions; i++) { // and class labels
+            labelContainer.appendChild(document.createElement("div"));
+        }
+    }
+
+    async function loop() {
+        webcam.update(); // update the webcam frame
+        await predict();
+        window.requestAnimationFrame(loop);
+    }
+
+    // run the webcam image through the image model
+    async function predict() {
+        // predict can take in an image, video or canvas html element
+        const prediction = await model.predict(webcam.canvas);
+        for (let i = 0; i < maxPredictions; i++) {
+            const classPrediction =
+                prediction[i].className + ": " + prediction[i].probability.toFixed(2);
+                if(prediction[i].probability>0.7){
+
+                                        labelContainer.childNodes[i].innerHTML = classPrediction;
+                                        labelContainer.childNodes[i].style.border = "black 2px solid";
+                                    }
+                    
+                                    else{
+                                        labelContainer.childNodes[i].innerHTML = " ";
+                                        labelContainer.childNodes[i].style.border = "none";
+                                    }
+        }
+    }
+
+
+
+  </script>
+
+</body>
+</html>

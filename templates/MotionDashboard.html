@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'sidebar.css' %}" >
+    <link rel="stylesheet" href="{% static 'MotionCardviews.css' %}" >
+ 
+
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+<body>
+
+  <div class="sidebar">
+    <div class="logo-details">
+     
+        <i class='bx bx-menu' id="btn" ></i>
+    </div>
+    <ul class="nav-list">
+     
+     
+      <li>
+       <a href="/">
+        
+         <i class=' bx bxs-home'></i>
+         <span class="links_name">Dashboard</span>
+       </a>
+       <span class="tooltip">Dashboard</span>
+     </li>
+     <li>
+       <a href="/Courses">
+         <i class=' bx bx-layer' ></i>
+         <span class="links_name">Courses</span>
+       </a>
+       <span class="tooltip">Courses</span>
+     </li>
+     <li>
+      
+     <li>
+       <a href="/MotionDetection">
+         <i class='bx bx-edit-alt' ></i>
+         <span class="links_name">Accuracy Test</span>
+       </a>
+       <span class="tooltip">Accuracy Test</span>
+     </li>
+         <li>
+       <a href="/ChooseArticle">
+         <i class='bx bx-book-open' ></i>
+         <span class="links_name">Read & Learn</span>
+       </a>
+       <span class="tooltip">Read & Learn</span>
+     </li>
+
+     
+    
+    </ul>
+  </div>
+  <section class="home-section">
+ 
+  
+   <div class="bg-light py-5 service-3">
+    <div class="container">
+        <!-- Row  -->
+        <div class="row">
+      
+            
+            <div class="col-md-6 wrap-service3-box">
+              <div class="card border-0 card-shadow mb-4">
+                    <div class="card-body d-flex">
+                     
+                        <div class="align-self-center">
+                            <h6 class="font-weight-medium"><a class="linking">TUTORIAL</a></h6>
+                            <p class="mt-3">This consists of a series of video and text tutorials through which one can get a chance to learn Sign Language and communicate with an ease.</p>
+                            <a  href="/TutorialChoose" class="btn btn-success-gradiant btn-md border-0 text-white"><span>Explore</span></a>
+                          </div>
+                        
+                    </div>
+                </div>
+              
+            </div>
+            <!-- Column -->
+            <!-- Column -->
+            <div class="col-md-6 wrap-service3-box">
+              <div class="card border-0 card-shadow mb-4">
+                    <div class="card-body d-flex">
+                     
+                        <div class="align-self-center">
+                            <h6 class="font-weight-medium"><a  class="linking">DETECT & TRAIN</a></h6>
+                            <p class="mt-3">This portal consists of a motion recognition panel which can be summarized as the automatic identification of communication through gestures.</p>
+                            <a href="/TrainYourself" class="btn btn-success-gradiant btn-md border-0 text-white"><span>Explore</span></a>
+                          </div>
+                        
+                    </div>
+                </div>
+              
+            </div>
+						
+        </div>
+    </div>
+</div>
+  </section>
+
+  <script src="{% static 'sidebar.js' %}"> </script>
+  <script src="{% static 'tute.js' %}"> </script>
+
+</body>
+</html>
+
+

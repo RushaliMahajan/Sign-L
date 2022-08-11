@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+   
+   {% load static %}
+   <link rel="stylesheet" href="{% static 'tute.css' %}" >
+  
+
+</head>
+<body>
+   
+<div class="container">
+
+   <div class="main-video-container">
+      <video src="{% static 'images/Birds.mov' %}" loop controls class="main-video"></video>
+      <h3 class="main-vid-title">How to say Bird?</h3>
+   </div>
+
+   <div class="video-list-container">
+
+      <div class="list active">
+         <video src="{% static 'images/Birds.mov' %}" class="list-video"></video>
+         <h3 class="list-title">How to say Bird?</h3>
+      </div>
+
+      <div class="list">
+         <video src="{% static 'images/Dog.mov' %}" class="list-video"></video>
+         <h3 class="list-title">How to say Dog?</h3>
+      </div>
+
+      <div class="list">
+         <video src="{% static 'images/Elephant.mov' %}"  class="list-video"></video>
+         <h3 class="list-title">How to say Elephant?</h3>
+      </div>
+
+
+      <div class="list">
+         <video src="{% static 'images/Fish.mov' %}"  class="list-video"></video>
+         <h3 class="list-title">How to say Fish?</h3>
+      </div>
+
+      <div class="list">
+         <video src="{% static 'images/Hen.mov' %}"  class="list-video"></video>
+         <h3 class="list-title">How to say Hen?</h3>
+      </div>
+
+      <div class="list">
+         <video src="{% static 'images/Lion.mov' %}"  class="list-video"></video>
+         <h3 class="list-title">How to say Lion?</h3>
+      </div>
+
+      <div class="list">
+         <video src="{% static 'images/Rabbit.mov' %}"  class="list-video"></video>
+         <h3 class="list-title">How to say Rabbit?</h3>
+      </div>
+
+      <div class="list">
+         <video src="{% static 'images/Snake.mov' %}"  class="list-video"></video>
+         <h3 class="list-title">How to say Snake?</h3>
+      </div>
+
+      <div class="list">
+         <video src="{% static 'images/Cat.mov' %}"  class="list-video"></video>
+         <h3 class="list-title">How to say Cat?</h3>
+      </div>
+
+      <div class="list">
+         <video src="{% static 'images/Cow.mov' %}"  class="list-video"></video>
+         <h3 class="list-title">How to say Cow?</h3>
+      </div>
+
+   </div>
+
+</div>
+
+
+<script src="{% static 'tute.js' %}"> </script>
+
+
+</body>
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'sidebar.css' %}" >
+    <link rel="stylesheet" href="{% static 'Courses.css' %}" >
+ 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+<body>
+  
+  <div class="sidebar">
+    <div class="logo-details">
+     
+        <i class='bx bx-menu' id="btn" ></i>
+    </div>
+    <ul class="nav-list">
+     
+     
+      <li>
+       <a href="/">
+        
+         <i class=' bx bxs-home'></i>
+         <span class="links_name">Dashboard</span>
+       </a>
+       <span class="tooltip">Dashboard</span>
+     </li>
+     <li>
+       <a href="/Courses">
+         <i class=' bx bx-layer' ></i>
+         <span class="links_name">Courses</span>
+       </a>
+       <span class="tooltip">Courses</span>
+     </li>
+     <li>
+      
+     <li>
+       <a href="/MotionDetection">
+         <i class='bx bx-edit-alt' ></i>
+         <span class="links_name">Accuracy Test</span>
+       </a>
+       <span class="tooltip">Accuracy Test</span>
+     </li>
+         <li>
+       <a href="/ChooseArticle">
+         <i class='bx bx-book-open' ></i>
+         <span class="links_name">Read & Learn</span>
+       </a>
+       <span class="tooltip">Read & Learn</span>
+     </li>
+
+     
+    
+    </ul>
+  </div>
+  
+  <section class="home-section">
+   
+    <div class="course">
+      <div class="course-info">
+        <h6>Course</h6>
+        <h2>Sign Language Basics</h2>
+        <a href="#">View all chapters <i class="fa fa-chevron-right"></i></a>
+      </div>
+  
+      <div class="course-progress">
+       
+        <h6>Chapter 1</h6>
+        <h2>Alphabets in Indian Sign Language</h2>
+        <button class="btn"><a href="/AlphabetsTutorials" style="text-decoration: none; color:white;" >Watch Now</button>
+      </div>
+    </div>
+  
+    <div class="course">
+      <div class="course-info">
+        <h6>Course</h6>
+        <h2>Sign Language Basics</h2>
+        <a href="#">View all chapters <i class="fa fa-chevron-right"></i></a>
+      </div>
+  
+      <div class="course-progress">
+       
+        <h6>Chapter 2</h6>
+        <h2>Numbers in Indian Sign Language</h2>
+        <button class="btn"><a href="/NumbersTutorials" style="text-decoration: none; color:white;" >Watch Now</button>
+      </div>
+    </div>
+  
+
+    <div class="course">
+      <div class="course-info">
+        <h6>Course</h6>
+        <h2>Sign Language Basics</h2>
+        <a href="#">View all chapters <i class="fa fa-chevron-right"></i></a>
+      </div>
+  
+      <div class="course-progress">
+       
+        <h6>Chapter 3</h6>
+        <h2>Colours in  Indian Sign Language </h2>
+        <button class="btn"><a href="/ColorsTutorial" style="text-decoration: none; color:white;" >Watch Now</button>
+      </div>
+    </div>
+
+    <div class="course">
+      <div class="course-info">
+        <h6>Course</h6>
+        <h2>Sign Language Basics</h2>
+        <a href="#">View all chapters <i class="fa fa-chevron-right"></i></a>
+      </div>
+  
+      <div class="course-progress">
+       
+        <h6>Chapter 3</h6>
+        <h2>Animals in  Indian Sign Language </h2>
+        <button class="btn"><a href="/AnimalsTutorials" style="text-decoration: none; color:white;" >Watch Now</button>
+      </div>
+    </div>
+  
+
+
+
+  
+  </section>
+
+  <script src="{% static 'sidebar.js' %}"> </script>
+
+
+</body>
+</html>
+
+

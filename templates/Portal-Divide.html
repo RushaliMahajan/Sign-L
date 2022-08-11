@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'sidebar.css' %}" >
+    <link rel="stylesheet" href="{% static 'Portal-divide.css' %}" >
+ 
+
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+<body>
+
+  <div class="sidebar">
+    <div class="logo-details">
+     
+        <i class='bx bx-menu' id="btn" ></i>
+    </div>
+    <ul class="nav-list">
+     
+     
+      <li>
+
+       <a href="/MotionDashboard">
+         <i class=' bx bx-layer' ></i>
+         <span class="links_name">Learn & Detect</span>
+       </a>
+       <span class="tooltip">Learn & Detect</span>
+     </li>
+     <li>
+      
+     <li>
+       <a href="/Translator">
+         <i class='bx bx-transfer-alt' ></i>
+         <span class="links_name">Translate</span>
+       </a>
+       <span class="tooltip">Translate</span>
+     </li>
+    
+
+     
+    
+    </ul>
+  </div>
+  <section class="home-section">
+ 
+    <div class="wrapper">
+      <div class="table basic">
+       
+        <div class="package-name"></div>
+        <ul class="features">
+          <li>
+            <span class="list-name"> This consists of a series of video and text tutorials through which one can get a chance to learn Sign Language and communicate with an ease.
+            </span>
+            <span class="icon check"><i class="fas fa-check"></i></span>
+          </li>
+       
+        </ul>
+        <div class="btn"><button><a href="/MotionDashboard" style="text-decoration: none; color:black;">BEGIN</a></button></div>
+      </div>
+      <div class="table premium">
+        
+      
+        <div class="package-name"></div>
+        <ul class="features">
+        
+          
+          <li>
+            <span class="list-name">This portal consists of a motion recognition panel which can be summarized as the automatic identification of communication through gestures.
+            </span>
+            <span class="icon cross"><i class="fas fa-times"></i></span>
+          </li>
+        </ul>
+        <div class="btn"><button><a href="/Translator" style="text-decoration: none; color:black;" >BEGIN</a></button></div>
+      </div>
+     
+  
+  </section>
+
+  <script src="{% static 'sidebar.js' %}"> </script>
+  <script src="{% static 'tute.js' %}"> </script>
+
+</body>
+</html>
+
+

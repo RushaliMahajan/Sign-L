@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+   
+   {% load static %}
+   <link rel="stylesheet" href="{% static 'tute.css' %}" >
+  
+
+</head>
+<body>
+   
+<div class="container">
+
+   <div class="main-video-container">
+      <video src="{% static 'images/1.mov' %}" loop controls class="main-video"></video>
+      <h3 class="main-vid-title">How to say 1?</h3>
+   </div>
+
+   <div class="video-list-container">
+
+      <div class="list active">
+         <video src="{% static 'images/1.mov' %}" class="list-video"></video>
+         <h3 class="list-title">How to say number 1?</h3>
+      </div>
+
+     <div class="list">
+         <video src="{% static 'images/2.mov' %}"  class="list-video"></video>
+         <h3 class="list-title">How to say number 2?</h3>
+      </div>
+
+
+      <div class="list">
+         <video src="{% static 'images/3.mov' %}"  class="list-video"></video>
+         <h3 class="list-title">How to say number 3?</h3>
+      </div>
+
+      <div class="list">
+         <video src="{% static 'images/4.mov' %}"  class="list-video"></video>
+         <h3 class="list-title">How to say number 4?</h3>
+      </div>
+
+      <div class="list">
+         <video src="{% static 'images/5.mov' %}"  class="list-video"></video>
+         <h3 class="list-title">How to say number 5?</h3>
+      </div>
+
+      <div class="list">
+         <video src="{% static 'images/6.mov' %}"  class="list-video"></video>
+         <h3 class="list-title">How to say number 6?</h3>
+      </div>
+
+      <div class="list">
+         <video src="{% static 'images/7.mov' %}"  class="list-video"></video>
+         <h3 class="list-title">How to say number 7?</h3>
+      </div>
+
+      <div class="list">
+         <video src="{% static 'images/8.mov' %}"  class="list-video"></video>
+         <h3 class="list-title">How to say number 8?</h3>
+      </div>
+
+      <div class="list">
+         <video src="{% static 'images/9.mov' %}"  class="list-video"></video>
+         <h3 class="list-title">How to say number 9?</h3>
+      </div>
+
+      <div class="list">
+        <video src="{% static 'images/10.mov' %}"  class="list-video"></video>
+        <h3 class="list-title">How to say number 10?</h3>
+     </div>
+
+   </div>
+
+</div>
+
+
+<script src="{% static 'tute.js' %}"> </script>
+
+
+</body>
+</html>
